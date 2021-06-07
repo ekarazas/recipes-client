@@ -38,7 +38,6 @@ export default {
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data);
           this.alert = true;
           this.message = res.data.msg || res.data.error || 'Unexpected error. Please try again later';
         })

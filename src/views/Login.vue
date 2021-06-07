@@ -39,7 +39,7 @@ export default {
         })
         .then((res) => {
           this.alert = true;
-          this.message = res.data.message || res.data.error || 'Unexpected error. Please try again later';
+          this.message = res.data.msg || res.data.error || 'Unexpected error. Please try again later';
           localStorage.setItem('token', res.data.token);
         })
         .catch((err) => console.log(err));
