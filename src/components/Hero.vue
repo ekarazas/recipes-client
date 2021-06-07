@@ -8,7 +8,6 @@
           </div>
           <div class="flex-item">
             <router-link class="nav-link" to="/">HOME</router-link>
-            <router-link class="nav-link" to="/myrecipes">MY RECIPES</router-link>
             <router-link class="nav-link" to="/addrecipe">ADD RECIPE</router-link>
             <div class="sign-buttons">
               <router-link class="sign-button" to="/login">LOGIN</router-link>

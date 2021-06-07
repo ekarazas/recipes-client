@@ -39,9 +39,14 @@ export default {
         })
         .then((res) => {
           this.alert = true;
-          this.message = res.data.msg || res.data.error || 'Unexpected error. Please try again later';
+          this.message = res.data.msg || res.data.error || 'Unexpected error. Try again later';
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          this.alert = true;
+          if (err.message.includes(500)) {
+            this.message = 'Email is already in use';
+          }
+        });
     },
   },
 };

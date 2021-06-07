@@ -39,10 +39,15 @@ export default {
         })
         .then((res) => {
           this.alert = true;
-          this.message = res.data.msg || res.data.error || 'Unexpected error. Please try again later';
+          this.message = res.data.msg || 'Unexpected error. Try again later';
           localStorage.setItem('token', res.data.token);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          this.alert = true;
+          if (err.message.includes(400)) {
+            this.message = 'Wrong email or password';
+          }
+        });
     },
   },
 };

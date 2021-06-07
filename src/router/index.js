@@ -8,14 +8,12 @@ const routes = [
     component: Home,
   },
   {
-    path: '/myrecipes',
-    name: 'MyRecipes',
-    component: () => import(/* webpackChunkName: "myrecipes" */ '../views/MyRecipes.vue'),
-  },
-  {
     path: '/addrecipe',
     name: 'AddRecipe',
     component: () => import(/* webpackChunkName: "addrecipe" */ '../views/AddRecipe.vue'),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: '/register',
@@ -32,6 +30,19 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    const token = localStorage.getItem('token');
+    if (token) {
+      next();
+    } else {
+      router.replace('/login');
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;

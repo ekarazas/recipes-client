@@ -13,15 +13,15 @@ export default {
 
 <style scoped>
 div {
-  background: rgb(81, 208, 197);
+  background: rgb(68, 160, 106);
   border-radius: 5px;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: white;
-  font-weight: 400;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  text-transform: uppercase;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+  width: 30%;
 }
 
 p {
