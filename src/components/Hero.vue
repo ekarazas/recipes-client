@@ -9,10 +9,10 @@
           <div class="flex-item">
             <router-link class="nav-link" to="/">HOME</router-link>
             <router-link class="nav-link" to="/myrecipes">MY RECIPES</router-link>
-            <router-link class="nav-link" to="/about">ADD RECIPE</router-link>
+            <router-link class="nav-link" to="/addrecipe">ADD RECIPE</router-link>
             <div class="sign-buttons">
-              <router-link class="sign-button" to="/about">LOGIN</router-link>
-              <router-link class="sign-button" to="/about">REGISTER</router-link>
+              <router-link class="sign-button" to="/login">LOGIN</router-link>
+              <router-link class="sign-button" to="/register">REGISTER</router-link>
             </div>
           </div>
         </div>
@@ -36,14 +36,13 @@ export default {
     url('~@/images/hero.jpg');
   background-size: cover;
   background-position: top;
-  height: 100vh;
+  height: 50vh;
 }
 
 .wrapper {
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
-  height: 50vh;
 }
 
 a img {
@@ -88,6 +87,7 @@ a img {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 @media only screen and (max-width: 320px) {
@@ -97,10 +97,14 @@ a img {
 }
 
 @media only screen and (min-width: 980px) {
+  .hero-image {
+    height: 50vh;
+  }
+
   .wrapper {
     max-width: 960px;
     padding-top: 2rem;
-    height: 50vh;
+    height: 35vh;
   }
 
   .flex-container {
@@ -134,8 +138,13 @@ a img {
 }
 
 @media only screen and (min-width: 1240px) {
+  .hero-image {
+    height: 50vh;
+  }
+
   .wrapper {
     max-width: 1220px;
+    height: 35vh;
   }
 }
 </style>
