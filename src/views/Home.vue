@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <Title text="Recipes" />
-    <input type="text" v-model="searchPhrase" v-on:keyup="startSearch" placeholder="Search..." />
+    <input type="text" v-model="search" v-on:keyup="getSearch" placeholder="Search..." />
     <div class="container">
       <Card v-for="recipe in recipes" v-bind:key="recipe.id" :recipe="recipe" />
     </div>
@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       recipes: [],
-      searchPhrase: '',
+      search: '',
     };
   },
   beforeMount() {
@@ -34,13 +34,13 @@ export default {
         })
         .catch((err) => console.log(err));
     },
-    startSearch(e) {
-      if (e.key === 'Backspace' && this.searchPhrase.trim().length < 3) {
+    getSearch(e) {
+      if (e.key === 'Backspace' && this.search.trim().length < 3) {
         this.showRecipes();
       }
-      if (this.searchPhrase.trim().length >= 3) {
+      if (this.search.trim().length >= 3) {
         axios
-          .get(`https://recipes-server-mfcu6.ondigitalocean.app/recipes/${this.searchPhrase}`)
+          .get(`https://recipes-server-mfcu6.ondigitalocean.app/recipes/${this.search}`)
           .then((res) => {
             this.recipes = res.data;
           })

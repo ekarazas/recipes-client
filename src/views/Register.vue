@@ -44,7 +44,7 @@ export default {
         .catch((err) => {
           this.alert = true;
           if (err.message.includes(500)) {
-            this.message = 'Email is already in use';
+            this.message = 'Unexpected error. Try again later';
           }
         });
     },
