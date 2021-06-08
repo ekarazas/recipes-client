@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-on:click="openRecipe">
     <img v-bind:src="recipe.image" :alt="recipe.title" />
     <div class="card-content">
       <h3>{{ recipe.title }}</h3>
@@ -12,6 +12,14 @@
 export default {
   name: 'Card',
   props: ['recipe'],
+  data() {
+    return { recipeID: this.recipe.id };
+  },
+  methods: {
+    openRecipe() {
+      this.$router.push(`/recipe/${this.recipeID}`);
+    },
+  },
 };
 </script>
 
