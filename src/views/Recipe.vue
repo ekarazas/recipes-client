@@ -37,16 +37,16 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 2rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 2rem;
 }
 
 img {
   height: 20rem;
-  width: 100%;
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
+  width: 100%;
 }
 
 .info {

@@ -66,6 +66,7 @@ button {
 
 .comment {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: rgb(233, 255, 242);
   padding: 0.1rem 1rem;
   margin-bottom: 2rem;
 }
