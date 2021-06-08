@@ -58,6 +58,10 @@ a img {
   text-decoration: none;
 }
 
+.nav-link:hover {
+  color: rgb(185, 185, 185);
+}
+
 .flex-item:last-child {
   display: flex;
   flex-direction: column;
@@ -69,7 +73,7 @@ a img {
 }
 
 .sign-button {
-  border: 1px solid #fff;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 100px;
   color: #fff;
   padding: 0.7rem 1.4rem;
@@ -80,8 +84,13 @@ a img {
   margin-left: 10px;
 }
 
+.sign-button:hover {
+  border: 1px solid rgb(185, 185, 185);
+  color: rgb(185, 185, 185);
+}
+
 .hero-content {
-  color: #fff;
+  color: rgb(255, 255, 255);
   height: 100%;
   display: flex;
   justify-content: center;

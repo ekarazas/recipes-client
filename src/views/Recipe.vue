@@ -41,8 +41,7 @@ export default {
   margin-top: 2rem;
 }
 
-img {
-  height: 20rem;
+.container img {
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
