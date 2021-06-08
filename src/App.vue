@@ -30,6 +30,16 @@ input {
   width: 100%;
 }
 
+textarea {
+  border: 1px solid rgba(78, 78, 78, 0.185);
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: rgba(78, 78, 78, 0.185) 1px 2px 5px 0px;
+  padding: 0.8rem;
+  outline: none;
+  width: 100%;
+}
+
 label {
   font-weight: 700;
   display: inline-block;
