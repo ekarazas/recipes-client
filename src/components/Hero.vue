@@ -9,9 +9,14 @@
           <div class="flex-item">
             <router-link class="nav-link" to="/">HOME</router-link>
             <router-link class="nav-link" to="/addrecipe">ADD RECIPE</router-link>
-            <div class="sign-buttons">
+            <div class="sign-buttons" v-if="!token">
               <router-link class="sign-button" to="/login">LOGIN</router-link>
               <router-link class="sign-button" to="/register">REGISTER</router-link>
+            </div>
+            <div class="buttons" v-else>
+              <button class="signout-button" v-on:click="logout">
+                SIGN OUT
+              </button>
             </div>
           </div>
         </div>
@@ -26,6 +31,13 @@
 <script>
 export default {
   name: 'Hero',
+  props: ['token'],
+  methods: {
+    logout() {
+      localStorage.removeItem('token');
+      this.$router.push('/login');
+    },
+  },
 };
 </script>
 
@@ -85,6 +97,20 @@ a img {
 }
 
 .sign-button:hover {
+  border: 1px solid rgb(185, 185, 185);
+  color: rgb(185, 185, 185);
+}
+
+.signout-button {
+  background: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.7rem 1.4rem;
+}
+
+.signout-button:hover {
   border: 1px solid rgb(185, 185, 185);
   color: rgb(185, 185, 185);
 }

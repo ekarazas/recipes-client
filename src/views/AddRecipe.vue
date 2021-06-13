@@ -74,6 +74,9 @@ export default {
         )
         .then((res) => {
           this.alert = true;
+          this.title = '';
+          this.image = '';
+          this.description = '';
           this.message = res.data.msg || res.data.error || 'Unexpected error. Try again later';
         })
         .catch((err) => console.log(err));

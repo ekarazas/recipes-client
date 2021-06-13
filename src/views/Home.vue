@@ -40,7 +40,7 @@ export default {
       }
       if (this.search.trim().length >= 3) {
         axios
-          .get(`https://recipes-server-mfcu6.ondigitalocean.app/recipes/${this.search}`)
+          .get(`https://recipes-server-mfcu6.ondigitalocean.app/recipes/recipe/${this.search}`)
           .then((res) => {
             this.recipes = res.data;
           })

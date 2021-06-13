@@ -1,5 +1,5 @@
 <template>
-  <Hero />
+  <Hero v-bind:token="token" :key="$route.fullPath"/>
   <router-view />
 </template>
 
@@ -9,6 +9,17 @@ import Hero from './components/Hero.vue';
 export default {
   name: 'App',
   components: { Hero },
+  data() {
+    return {
+      token: '',
+    };
+  },
+  beforeMount() {
+    this.token = localStorage.getItem('token');
+  },
+  beforeUpdate() {
+    this.token = localStorage.getItem('token');
+  },
 };
 </script>
 

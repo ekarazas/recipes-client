@@ -1,7 +1,7 @@
 <template>
   <Title text="Comments" />
   <form v-on:submit.prevent="add">
-    <input type="text" v-model="comment" placeholder="Tell us your opinion about this recipe..." />
+    <input type="text" v-model="comment" placeholder="Tell us your thoughts about this recipe..." />
     <div class="button-position">
       <button type="submit">Comment</button>
     </div>
@@ -52,6 +52,7 @@ export default {
           )
           .then(() => {
             this.comments.push({ comment: this.comment });
+            this.comment = '';
           });
       }
     },
@@ -66,7 +67,7 @@ button {
 
 .comment {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background: rgb(233, 255, 242);
+  background: rgb(255, 249, 233);
   padding: 0.1rem 1rem;
   margin-bottom: 2rem;
 }

@@ -42,6 +42,7 @@ export default {
 }
 
 .container img {
+  max-height: 25rem;
   object-fit: cover;
   object-position: center;
   vertical-align: middle;

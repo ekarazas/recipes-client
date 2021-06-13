@@ -38,9 +38,8 @@ export default {
           password: this.password,
         })
         .then((res) => {
-          this.alert = true;
-          this.message = res.data.msg || 'Unexpected error. Try again later';
           localStorage.setItem('token', res.data.token);
+          this.$router.push('/');
         })
         .catch((err) => {
           this.alert = true;
