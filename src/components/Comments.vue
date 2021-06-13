@@ -1,6 +1,9 @@
 <template>
   <Title text="Comments" />
-  <form v-on:submit.prevent="add">
+  <div class="login-text" v-if="!loggedIn">
+    You must be logged in if you want to leave a comment
+  </div>
+  <form v-on:submit.prevent="add" v-else>
     <input type="text" v-model="comment" placeholder="Tell us your thoughts about this recipe..." />
     <div class="button-position">
       <button type="submit">Comment</button>
@@ -26,6 +29,7 @@ export default {
       comments: [],
       comment: '',
       recipeID: this.$route.params.recipeID,
+      loggedIn: localStorage.getItem('token'),
     };
   },
   beforeMount() {
@@ -63,6 +67,12 @@ export default {
 <style scoped>
 button {
   margin-bottom: 2.5rem;
+}
+
+.login-text {
+  color: rgb(79, 172, 37);
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 .comment {

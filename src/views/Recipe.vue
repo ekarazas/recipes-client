@@ -7,7 +7,7 @@
         {{ recipe.description }}
       </div>
     </div>
-    <Comments v-if="loggedIn" />
+    <Comments />
   </div>
 </template>
 
@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       recipe: '',
-      loggedIn: localStorage.getItem('token'),
     };
   },
   beforeMount() {
